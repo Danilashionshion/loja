@@ -19,7 +19,7 @@ export default function App(props) {
 
       </View>
       
-      <View>
+      <View style={styles.productsContainer}>
         <Produtos/>
       </View>
       <StatusBar />
@@ -42,6 +42,9 @@ const styles = StyleSheet.create({
   textContainer: {
     alignItems: 'center',
     marginTop: 10,
+  },
+  productsContainer: {
+    alignItems: 'center',
   },
   produtosContainer: {
     flex: 1,
