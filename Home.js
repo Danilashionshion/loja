@@ -5,12 +5,13 @@ import Logotipo from './components/logotipo.js';
 import Produtos from './components/products.js';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
 
 const Stack = createNativeStackNavigator()
 
 export default function Home(props) {
   
-  
+  const navigation = useNavigation()
   return (
     
     <SafeAreaView style={styles.container}>    

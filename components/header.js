@@ -5,15 +5,16 @@ import { useEffect } from 'react';
 import { Button } from 'react-native-web';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator, navigator } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Header(props) {
-  
+  const navigation = useNavigation()
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.paragraph}>
         <FlatList
           data={props.links}
-          renderItem={({ item }) => <Button style={styles.paragraph} title={item} onPress={() => props.navigation.navigate('carrinho')}/>}
+          renderItem={({ item }) => <Button style={styles.paragraph} title={item} onPress={() => navigation.navigate(item)}/>}
           horizontal={true}
         />
        
