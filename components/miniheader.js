@@ -20,9 +20,10 @@ const styles = StyleSheet.create({
     container: {
       justifyContent: 'flex-start',
       padding: 20,
-      backgroundColor: '#ecf0f1',
+      backgroundColor: 'white',
       flexDirection: 'row-reverse',
       flexWrap: 'Wrap',
+
     },
     paragraph: {
       color: 'black',
