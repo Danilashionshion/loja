@@ -1,51 +1,39 @@
-import { Text, SafeAreaView, StyleSheet,View } from 'react-native';
+import { Text, SafeAreaView, StyleSheet, View } from 'react-native';
 import { StatusBar } from 'react-native'
 import Header from './components/header.js'
-import Logotipo from './components/logotipo.js'; 
+import Logotipo from './components/logotipo.js';
 import Produtos from './components/products.js';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './Home.js';
+import Cart from './Cart.js';
 
-export default function App(props) {
-  
- 
-  return (
-    <SafeAreaView style={styles.container}>    
-      <View style={styles.header}>
-      <Header
-        links={['Home','Itens','Profile']}
-      />
-     <View style={styles.textContainer}> 
-        <Logotipo texto={'Compre, se quiser'}></Logotipo>
-     </View>
+const Stack = createNativeStackNavigator()
 
-      </View>
-      
-      <View>
-        <Produtos/>
-      </View>
-      <StatusBar />
-    </SafeAreaView>
-  );
+export default function App() {
+    try {
+        return (
+            <NavigationContainer >
+                <Stack.Navigator initialRouteName='Home'>
+                    <Stack.Screen
+                        name="Home"
+                        component={Home}
+                        options={{ title: 'Welcome' }}
+                        
+                    />
+                    
+                    <Stack.Screen
+                        name="carrinho"
+                        component={Cart}/>
+                </Stack.Navigator>
+            </NavigationContainer>
+        )
+    } catch (error) {
+        return(
+            <Text> Você não deveria ver isso</Text>
+        )
+    }
+
+
 }
- 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ecf0f1',
-  },
-  header: {
-    width: '100%',
-    padding: 10,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-  },
-  produtosContainer: {
-    flex: 1,
-    padding: 10,
-  },
-});
- 
+
