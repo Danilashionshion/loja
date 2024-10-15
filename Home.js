@@ -34,27 +34,28 @@ export default function Home(props) {
 }
  
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ecf0f1',
-  },
-  header: {
-    width: '100%',
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
     padding: 10,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  textContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-  },
-  productsContainer: {
-    alignItems: 'center',
-  },
-  produtosContainer: {
-    flex: 1,
+  button: {
     padding: 10,
+    backgroundColor: 'blue',
+    borderRadius: 5,
+    margin: 10,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  image: {
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
+    alignSelf: 'center',
   },
 });
  

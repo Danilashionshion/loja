@@ -17,22 +17,19 @@ export default function Mini(props) {
  
 
 const styles = StyleSheet.create({
-    container: {
-      justifyContent: 'flex-start',
-      padding: 20,
-      backgroundColor: 'white',
-      flexDirection: 'row-reverse',
-      flexWrap: 'Wrap',
-
-    },
-    paragraph: {
-      color: 'black',
-      marginTop: 0,
-      fontSize: 14,
-      fontWeight: 'bold',
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'Wrap',
-      marginRight: 10,
-    },
-  });
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    padding: 10,
+    backgroundColor: '#f0f0f0',
+  },
+  button: {
+    padding: 10,
+    backgroundColor: '#ccc',
+    borderRadius: 5,
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});
