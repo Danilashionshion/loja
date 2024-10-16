@@ -1,14 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Text, SafeAreaView, StyleSheet, FlatList, Image, View, Pressable } from 'react-native';
 import produtos from './produtinhoinho';
 import Carrinho from './carrinho';
+import { CartContext } from '../Context/context.js';
+
 
 export default function Produtos(props) {
 
     const [categoria, setCategoria] = useState("")
     const [estadocategoria, setestadoCategoria] = useState(false)
     const [sorts, setsort] = useState([])
-    const [Carrinho, setCarrinho] = useState([])
+    const [products, setproducts] = useContext(CartContext)
 
     
     function filtros(categoria) {
@@ -29,11 +31,10 @@ export default function Produtos(props) {
     }
 
     function handleAdd(id) {
-        const existingItem = Carrinho.find((i) => i.id === id);
         const item = produtos.find((p) => p.id === id);
-       setCarrinho([...Carrinho, { ...item }]);
+        setproducts([...products, { ...item }]);
 
-        console.log(Carrinho);
+        console.log(products);
         
     }
     if (sorts == true) {
