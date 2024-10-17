@@ -20,9 +20,7 @@ export default function Header(props) {
        
       </Text>
       <Text style={styles.miniheader}>
-        <Mini
-          link={['tablets','celulares','pc']}
-        />
+        
       </Text>
     </SafeAreaView>
   );

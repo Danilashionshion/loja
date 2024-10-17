@@ -11,7 +11,7 @@ export default function Produtos(props) {
     const [estadocategoria, setestadoCategoria] = useState(false)
     const [sorts, setsort] = useState([])
     const [products, setproducts] = useContext(CartContext)
-
+    
     
     function filtros(categoria) {
         setCategoria(categoria)
@@ -54,9 +54,10 @@ export default function Produtos(props) {
                 <Pressable style={styles.subheaderparagraph} onPress={() => clear()}> Limpar Estado </Pressable>
             </View>
 
-            <Text>
+            
                 <FlatList
                     data={filtro}
+                    style={styles.listContainer}
                     renderItem={({ item }) => (
                         <View style={styles.itemContainer} >
                             <Pressable style={styles.itemContainer} id={item.id} onPress={() => handleAdd(item.id)} >
@@ -68,9 +69,9 @@ export default function Produtos(props) {
                         </View>
                     )}
                     keyExtractor={item => item.id.toString()}
-                    horizontal={false}
+                    horizontal={true}
                 />
-            </Text>
+          
         </SafeAreaView>
 
     )
@@ -88,7 +89,12 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ccc',
         borderRadius: 5,
+       
     },
+    listContainer: {
+        flexDirection: 'row'
+    }
+    ,
     imagem: {
         width: 100,
         height: 100,
@@ -103,7 +109,7 @@ const styles = StyleSheet.create({
     },
     subheader: {
         marginTop: 20,
-        flexDirection: 'row',
+        flexDirection: 'collumn',
         justifyContent: 'space-around',
     },
     subheaderparagraph: {
